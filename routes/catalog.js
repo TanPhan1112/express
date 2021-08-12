@@ -6,6 +6,21 @@ var book_controller = require('../controllers/bookController');
 var author_controller = require('../controllers/authorController');
 var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
+var publisher_controller = require('../controllers/publisherController');
+
+/// PUBLISHER ROUTES ///
+
+// GET request for creating a Publisher. NOTE This must come before routes that display Publisher (uses id).
+router.get('/publisher/create', publisher_controller.publisher_create_get);
+
+// POST request for creating Publisher.
+router.post('/publisher/create', publisher_controller.publisher_create_post);
+
+// GET request for one Publisher.
+router.get('/publisher/:id', publisher_controller.publisher_detail);
+
+// GET request for list of all Publishers.
+router.get('/publishers', publisher_controller.publisher_list);
 
 /// BOOK ROUTES ///
 
